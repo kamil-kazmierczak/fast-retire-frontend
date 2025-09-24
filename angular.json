@@ -14,6 +14,7 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
+            "polyfills": ["@angular/localize/init", "zone.js"]
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -22,7 +23,8 @@
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+                "src/scss/styles.scss"
             ]
           },
           "configurations": {
@@ -67,6 +69,7 @@
         "test": {
           "builder": "@angular/build:karma",
           "options": {
+            "polyfills": ["zone.js", "zone.js/testing", "@angular/localize/init"]
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
